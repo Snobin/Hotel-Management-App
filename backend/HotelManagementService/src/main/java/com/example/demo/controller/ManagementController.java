@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.ManagementDto;
+import com.example.demo.entity.ManagementEntity;
 import com.example.demo.entity.ManagementPk;
 import com.example.demo.exception.RecordNotFoundException;
 import com.example.demo.service.HotelManagementService;
 
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -25,8 +27,15 @@ public class ManagementController {
 
 	@Autowired
 	private HotelManagementService managementService;
+	
+	
+	@GetMapping("/getall")
+	public ResponseEntity<?> getall() {
+		return managementService.getall();
+	}
 
 	@GetMapping
+	@Operation
 	public ResponseEntity<JSONObject> getdata(@RequestParam("searchParam") String searchParam) {
 //		System.out.println("searchparam=" + searchParam);
 

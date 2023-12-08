@@ -8,5 +8,7 @@ import com.example.demo.entity.ManagementPk;
 
 public interface HotelManagementRepository extends JpaRepository<ManagementEntity, ManagementPk>,
 JpaSpecificationExecutor<ManagementEntity>{
+	
+//	Optional<ManagementEntity> findbyname(String name);
 
 }

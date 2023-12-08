@@ -255,4 +255,10 @@ public class HotelManageSerImplementation implements HotelManagementService{
 		return "manger";
 	}
 
+	@Override
+	public ResponseEntity<?> getall() {
+		// TODO Auto-generated method stub
+		return  new ResponseEntity<>( managementRepository.findAll(),HttpStatus.ACCEPTED);
+	}
+
 }

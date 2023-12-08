@@ -23,5 +23,7 @@ public interface HotelManagementService {
 	ServiceResponse deleteManagement(ManagementPk obj)  throws RecordNotFoundException;
 	
 	ServiceResponse verify(ManagementPk compositeKey) throws RecordNotFoundException;
+	
+	ResponseEntity<?> getall();
 
 }
